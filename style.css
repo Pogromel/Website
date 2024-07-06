@@ -11,10 +11,9 @@ body {
     color: #fff;
 }
 
-
-
-
-
+.container {
+    padding: 10px 10%;
+}
 
 /* Header Section */
 #header {
@@ -25,20 +24,10 @@ body {
     background-position: center;
 }
 
-.container {
-    padding: 10px 10%;
-}
-
 h2 {
-    display: flex;
-    text-align: left;
     font-size: 35px;
-    font-family: "Courier New", Monospace;
-    list-style: none;
-    margin: 100px 0px 0 200px; 
+    margin: 100px 0 0 200px; 
 }
-
-
 
 /* Navigation Bar */
 nav {
@@ -50,6 +39,7 @@ nav {
 
 nav ul {
     display: flex;
+    flex-wrap: wrap;
 }
 
 nav ul li {
@@ -68,7 +58,7 @@ nav ul li a {
 
 nav ul li a::after {
     content: '';
-    width: 0%;
+    width: 0;
     height: 3px;
     background: rgba(255, 51, 0, 0.863);
     position: absolute;
@@ -80,11 +70,6 @@ nav ul li a::after {
 nav ul li a:hover::after {
     width: 100%;
 }
-
-
-
-
-
 
 /* About Section for Index */
 #about {
@@ -118,15 +103,7 @@ nav ul li a:hover::after {
     color: #fff;
 }
 
-.Info {
-    font-size: 15px;
-    font-weight: 400;
-    color: #fff;
-    line-height: 1.1;
-    margin-bottom: 20px;
-}
-
-.Info2 {
+.Info, .Info2 {
     font-size: 15px;
     font-weight: 400;
     color: #fff;
@@ -140,13 +117,6 @@ nav ul li a:hover::after {
     margin: -40px auto; 
     border-radius: 5px; 
 }
-
-
-
-
-
-
-
 
 /* Social Icons */
 .social-icons {
@@ -173,21 +143,11 @@ nav ul li a:hover::after {
     filter: grayscale(0%) brightness(1.5) drop-shadow(0 0 5px red); 
 }
 
-
 #featured-games-title {
     margin-top: 60px;
 }
 
-
-
-
-
-
-
-
-
-
-/**************************** Game Icons *****************************/
+/* Game Icons */
 .icon-text {
     display: inline-flex; 
     align-items: center;
@@ -204,7 +164,6 @@ nav ul li a:hover::after {
 
 .icon-text span {
     font-size: 14px;
-    
 }
 
 #games {
@@ -251,7 +210,7 @@ nav ul li a:hover::after {
 
 .game h3 a::after {
     content: '';
-    width: 0%;
+    width: 0;
     height: 3px;
     background: rgba(255, 51, 0, 0.863);
     position: absolute;
@@ -273,16 +232,7 @@ nav ul li a:hover::after {
     font-size: 16px;
 }
 
-
-
-
-
-
-
-
-
-
-/* -----------------------Subpage Styles-------------------------- */
+/* Subpage Styles */
 #game-about {
     padding: 80px 0;
     color: #adadad;
@@ -317,22 +267,7 @@ nav ul li a:hover::after {
     color: #ffffff;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/***************************** Information Section *****************************************/
+/* Information Section */
 #game-information {
     padding: 40px 0;
     text-align: left;
@@ -388,19 +323,7 @@ nav ul li a:hover::after {
     margin: 40px 0;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-/*                                            Summary Section                                        */
+/* Summary Section */
 #summary-section {
     padding: 40px 0;
     color: #fff;
@@ -450,12 +373,7 @@ nav ul li a:hover::after {
     object-fit: cover;
 }
 
- 
-
-
-
-
-/*           Screenshots Section           */
+/* Screenshots Section */
 #screenshots-section {
     padding: 40px 0;
     color: #fff;
@@ -488,4 +406,84 @@ nav ul li a:hover::after {
     object-fit: cover;
 }
 
+/* Responsive Styles */
+@media only screen and (max-width: 768px) {
+    h2 {
+        font-size: 24px; /* Adjusted smaller font size for h2 titles */
+        margin: 20px 10px;  /* Adjusted margin for better spacing */
+        text-align: left; /* Align h2 titles to the left */
+    }
 
+    .sub-title, .screenshots-title, .summary-title, #featured-games-title {
+        font-size: 20px; /* Adjusted smaller font size for section titles */
+        text-align: left; /* Align section titles to the left */
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .row {
+        flex-direction: column;
+    }
+
+    .about-col-1, .about-col-2 {
+        flex-basis: 100%;
+        margin-left: 0;
+    }
+
+    .game-row {
+        flex-direction: column;
+    }
+
+    .game-about-col-1, .game-about-col-2, .game-info-col-1, .game-info-col-2 {
+        flex-basis: 100%;
+        margin-left: 0;
+        max-width: 100%;
+        text-align: left; /* Align text to the left */
+    }
+
+    .summary-content {
+        flex-direction: column;
+    }
+
+    .summary-text, .summary-images {
+        flex-basis: 100%;
+        text-align: left; /* Align text to the left */
+    }
+
+    .screenshots-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .icon-link {
+        margin-left: 0;
+    }
+
+    .social-icons {
+        margin-left: 0;
+    }
+
+    /* Title, Image, Text Layout for Phones */
+    .game-row,
+    .game-info-row,
+    .summary-content {
+        flex-direction: column;
+    }
+
+    .game-about-col-1 img,
+    .game-info-col-1 img {
+        margin: 0 auto 20px;
+    }
+
+    .game-about-col-2, 
+    .game-info-col-2, 
+    .summary-text {
+        text-align: left; /* Align text to the left */
+    }
+}
